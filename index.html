@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Panel Pterodactyl - Solusi hosting bot cepat, stabil, dan terpercaya. Performa optimal 24/7, harga mulai Rp1.000 untuk ram 3gb, proses cepat & support responsif.">
+  <title>NúkEásy</title>
+<meta name="description" content="Pterodactyl panel berkualitas dengan harga terjangkau, cepat, dan terpercaya.">
+<link rel="icon" href="https://img2.pixhost.to/images/7614/721680622_sifah.jpg">
+  <!-- Google Fonts + Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f0fe 100%);
+      color: #0a2f44;
+      line-height: 1.5;
+    }
+
+    /* background deco */
+    .bg-shape {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+    .bg-shape:before {
+      content: "";
+      position: absolute;
+      width: 80vw;
+      height: 80vw;
+      background: radial-gradient(circle, rgba(56, 178, 245, 0.12) 0%, rgba(56, 178, 245, 0) 70%);
+      top: -40vh;
+      left: -20vw;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .bg-shape:after {
+      content: "";
+      position: absolute;
+      width: 90vw;
+      height: 90vw;
+      background: radial-gradient(circle, rgba(0, 150, 210, 0.08) 0%, rgba(0, 150, 210, 0) 70%);
+      bottom: -50vh;
+      right: -20vw;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      position: relative;
+    }
+
+    /* navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      gap: 1rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-icon {
+      background: linear-gradient(145deg, #1183c2, #096b9f);
+      width: 52px;
+      height: 52px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 15px 20px -12px rgba(0, 98, 143, 0.3);
+    }
+    .logo-icon i {
+      font-size: 28px;
+      color: white;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+    .logo-text h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      background: linear-gradient(125deg, #10688f, #1f95d0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .logo-text p {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #2b7aa3;
+      letter-spacing: 0.5px;
+    }
+    .trust-chip {
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(8px);
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0f6b96;
+      border: 1px solid rgba(31, 129, 184, 0.3);
+      box-shadow: 0 5px 14px rgba(0,0,0,0.02);
+    }
+    .trust-chip i {
+      margin-right: 8px;
+      color: #289fdf;
+    }
+
+    /* hero */
+    .hero {
+      text-align: center;
+      margin: 2rem 0 3rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(54, 163, 222, 0.12);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #1277a8;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .hero h2 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      background: linear-gradient(130deg, #0c618b, #1791ca, #44b0e6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 650px;
+      margin: 0 auto;
+      color: #1f648b;
+      font-weight: 500;
+    }
+
+    /* feature grid */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .feature-card {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 2rem;
+      padding: 1.8rem 1.2rem;
+      flex: 1;
+      min-width: 240px;
+      text-align: center;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(64, 170, 225, 0.35);
+      box-shadow: 0 20px 35px -15px rgba(0, 55, 85, 0.08);
+    }
+    .feature-card:hover {
+      background: white;
+      transform: translateY(-6px);
+      border-color: #82c8f0;
+      box-shadow: 0 30px 40px -20px rgba(27, 123, 171, 0.25);
+    }
+    .feature-icon {
+      background: linear-gradient(135deg, #e2f2ff, #cbe6fa);
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin: 0 auto 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #187faf;
+    }
+    .feature-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #0f6188;
+    }
+    .feature-card p {
+      color: #2e6d91;
+      font-weight: 500;
+    }
+    .price-tag {
+      margin-top: 1rem;
+      background: #ecf7ff;
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #1779ac;
+    }
+
+    /* harga spotlight */
+    .price-spotlight {
+      margin: 2rem 0 3rem;
+    }
+    .highlight-card {
+      background: linear-gradient(115deg, #ffffff 0%, #f5fcff 100%);
+      border-radius: 2rem;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.8rem;
+      border: 1px solid #aad4f1;
+      box-shadow: 0 35px 40px -20px rgba(0, 108, 148, 0.2);
+    }
+    .highlight-left {
+      flex: 2;
+    }
+    .highlight-left .sup {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: #278bc2;
+    }
+    .highlight-left h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #064d6e;
+      margin: 0.75rem 0 0.5rem;
+    }
+    .spec-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    .spec-badge {
+      background: #e5f2fa;
+      border-radius: 60px;
+      padding: 0.3rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #136f98;
+    }
+    .highlight-right {
+      background: #e3f2fd;
+      padding: 1.2rem 2rem;
+      border-radius: 1.5rem;
+      text-align: center;
+      min-width: 180px;
+    }
+    .price {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #045c83;
+      line-height: 1;
+    }
+    .price small {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .price-desc {
+      font-weight: 500;
+      margin-top: 5px;
+      color: #146e95;
+    }
+
+    /* tombol CTA */
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2.5rem 0 2rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.9rem 2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.2s;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(105deg, #1b87be, #0c73a5);
+      color: white;
+      box-shadow: 0 10px 20px -8px rgba(22, 105, 148, 0.4);
+    }
+    .btn-primary:hover {
+      transform: scale(1.02);
+      background: linear-gradient(105deg, #0f75a8, #0a628e);
+      box-shadow: 0 15px 25px -10px #1a6c96;
+    }
+    .btn-outline {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(4px);
+      color: #1176a8;
+      border: 1px solid #7fc2e8;
+    }
+    .btn-outline:hover {
+      background: white;
+      border-color: #289fdf;
+      transform: translateY(-2px);
+    }
+    .gaskeun {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+    .gaskeun-label {
+      background: #fff2db;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.5rem 1.6rem;
+      border-radius: 60px;
+      font-weight: 800;
+      color: #cc7b1a;
+      font-size: 1rem;
+      border: 1px solid #ffe2b5;
+    }
+    .footer {
+      margin-top: 4rem;
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(44, 147, 197, 0.25);
+      font-size: 0.8rem;
+      color: #3f7ea2;
+    }
+    .footer a {
+      color: #1c7aa9;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 760px) {
+      .container {
+        padding: 1.2rem;
+      }
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .highlight-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .feature-card {
+        min-width: 100%;
+      }
+      .btn {
+        padding: 0.7rem 1.5rem;
+      }
+    }
+    @media (max-width: 500px) {
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+      .highlight-left h3 {
+        font-size: 1.5rem;
+      }
+      .price {
+        font-size: 2.5rem;
+      }
+    }
+    .small-note {
+      font-size: 0.75rem;
+      margin-top: 0.8rem;
+      color: #4682a3;
+    }
+    .star-rating {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      color: #f5b042;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="bg-shape"></div>
+<div class="container">
+  <!-- navbar modern -->
+  <div class="navbar">
+    <div class="logo">
+      <div class="logo-icon">
+<i class="fas fa-server"></i>
+      </div>
+      <div class="logo-text">
+        <h1>PANEL PTERODACTYL</h1>
+        <p>High‑Performance Bot Hosting</p>
+      </div>
+    </div>
+    <div class="trust-chip">
+      <i class="fas fa-check-circle"></i> Terpercaya & Stabil
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-badge">
+      <i class="fas fa-bolt"></i> Solusi agar bot cepat & stabil
+    </div>
+    <h2>© NúkEásy<br></h2>
+    <p>Infrastruktur panel untuk performa maksimal,dukungan responsif.</p>
+  </div>
+
+  <!-- Fitur utama (3 item sesuai request) -->
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-sync-alt"></i>
+      </div>
+
+      <h3>Harga Mulai Rp1.000</h3>
+      <p>Dapatkan ram 3gb dengan harga super ekonomis, cocok untuk semua bot.</p>
+      <div class="price-tag"><i class="fas fa-gem"></i> Value terbaik</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-headset"></i>
+      </div>
+      <h3>Proses Cepat + Support</h3>
+      <p>Order otomatis, aktivasi langsung. Tim support siap bantu 24/7.</p>
+      <div class="price-tag"><i class="fas fa-rocket"></i> Fast response</div>
+    </div>
+  </div>
+
+  <!-- Harga unggulan: Rp1.000 RAM 3GB -->
+  <div class="price-spotlight">
+    <div class="highlight-card">
+      <div class="highlight-left">
+        <div class="sup"><i class="fas fa-tag"></i> HARGA TERMURAH</div>
+        <h3>Paket Hemat Ram 3Gb</h3>
+        <p>Mulai dari harga termurah. Dapatkan akses panel Pterodactyl, performa tinggi, dan stabilitas maksimal untuk bot kamu.</p>
+        <div class="spec-list">
+
+          <span class="spec-badge"><i class="fas fa-clock"></i> 24/7 uptime</span>
+        </div>
+      </div>
+      <div class="highlight-right">
+        <div class="price">Rp1.000<small>/bulan</small></div>
+        <div class="price-desc">Server Ram 3Gb</div>
+        <div style="font-size: 0.7rem; margin-top: 0.3rem;">Fee admin sekitar 300rupiah</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol aksi: Bot Auto Order & Admin -->
+  <div class="cta-buttons">
+    <a href="https://t.me/nukhibot" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+<i class="fas fa-shopping-cart"></i>Order Sekarang
+
+    </a>
+    <a href="https://t.me/NyXuQiChannel" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+    <i class="fas fa-crown"></i> Channel admin
+    </a>
+  </div>
+
+  <!-- Gaskeun order -->
+  <div class="gaskeun">
+    <div class="gaskeun-label">
+      <i class="fas fa-fire"></i>Gasken aja cuy
+      <i class="fas fa-arrow-trend-up"></i>
+    </div>
+    <p class="small-note">✔ Proses cepat, support responsif.</p>
+  </div>
+
+  <!-- Footer profesional -->
+  <div class="footer">
+    <p>solusi bot cepat dan stabil, sudah pasti terpercaya.</p>
+    <p style="margin-top: 8px;">
+      <i class="fab fa-telegram"></i> <a href="https://t.me/nukhibot" target="_blank">t.me/nukhibot</a> &nbsp;|&nbsp;
+      <i class="fab fa-telegram"></i> <a href="https://t.me/nukverse" target="_blank">t.me/nukverse</a>
+    </p>
+    <div style="margin-top: 8px;">
+
+      <span>© Powered By NúkkEásy</span>
+    </div>
+  </div>
+</div>
+
+<!-- animasi sederhana saat load -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const fadeElems = document.querySelectorAll('.feature-card, .highlight-card, .hero, .cta-buttons');
+    fadeElems.forEach((el, idx) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(12px)';
+      el.style.transition = 'opacity 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.4s ease';
+      setTimeout(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, idx * 80);
+    });
+  });
+</script>
+</body>
+</html>
